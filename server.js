@@ -1,12 +1,12 @@
-var express = require('express');
-var morgan = require('morgan');
+var express = require('express'); //this is the package we are importing this is used to tell the server how to listen the request 
+var morgan = require('morgan'); //this is telling what kind of request is coming and how to respond to them
 var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
 
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+  res.sendFile(path.join(__dirname, 'ui', 'index.html')); //if this is requested then this function will be responded
 });
 
 app.get('/article-one',function(req,res){
